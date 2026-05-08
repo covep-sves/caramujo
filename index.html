@@ -162,6 +162,55 @@ details[open] summary::after{transform:rotate(180deg)}
 .appicon img{width:100%;height:100%;object-fit:cover}
 @media(max-width:520px){.brand-logos-final{gap:10px}.brand-logos-final img{max-height:40px;max-width:46%}}
 
+
+/* Ajuste responsivo do quadro comparativo africano × nativo */
+@media(max-width:560px){
+  .infog-title{
+    display:grid;
+    grid-template-columns:1fr;
+    padding:0;
+    gap:0;
+  }
+  .infog-title span{
+    display:block;
+    padding:10px 14px;
+    text-align:left!important;
+    line-height:1.25;
+  }
+  .infog-title span:first-child{
+    background:#b01010;
+  }
+  .infog-title span:last-child{
+    background:#1a6b1a;
+  }
+  .infog-body{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .infog-col{
+    border-bottom:1px solid var(--borda);
+    padding-bottom:10px;
+  }
+  .infog-col:last-child{
+    border-bottom:0;
+    padding-bottom:0;
+  }
+  .ic-row{
+    font-size:13px;
+    align-items:flex-start;
+  }
+  .ic-row .lbl{
+    min-width:72px;
+    text-align:center;
+  }
+  .infog-ovos{
+    align-items:flex-start;
+  }
+  .infog-aviso{
+    align-items:flex-start;
+  }
+}
+
 </style>
 
 <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
@@ -235,7 +284,7 @@ details[open] summary::after{transform:rotate(180deg)}
 
 <!-- O QUE É -->
 <section id="oque-e">
-  <div class="card az hero"><div class="tag">Identificação</div><h2>O que é o caramujo africano?</h2><p><em>Achatina fulica</em> — molusco gastrópode terrestre originário da África Oriental, considerado uma das 100 piores espécies invasoras do mundo (IUCN).</p></div>
+  <div class="card az hero"><div class="tag">Identificação</div><h2>O que é o caramujo africano?</h2><p><em>Achatina fulica</em> — molusco gastrópode terrestre originário da África Oriental, introduzido no Brasil e capaz de se reproduzir rapidamente, especialmente em ambientes úmidos.</p></div>
   <div class="infog">
     <div class="infog-title"><span>Caramujo africano<br><em style="font-weight:400;font-size:10px">(Achatina fulica)</em></span><span style="text-align:right">Caramujo nativo<br><em style="font-weight:400;font-size:10px">(Megalobulimus spp.)</em></span></div>
     <div class="infog-body">
