@@ -1,9 +1,15 @@
-const CACHE_NAME = 'caramujo-africano-slz-final-v1';
+const CACHE_NAME = 'caramujo-africano-slz-preview-v2';
 const ASSETS = [
   './',
   './index.html',
   './manifest.json',
+  './service-worker.js',
   './icon.png',
+  './icon-192.png',
+  './icon-512.png',
+  './favicon.png',
+  './apple-touch-icon.png',
+  './preview.png',
   './prefeitura_semus.png',
   './logo_covep.png',
   './ciclo_angiostrongylus.png',
