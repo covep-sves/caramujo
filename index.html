@@ -211,6 +211,36 @@ details[open] summary::after{transform:rotate(180deg)}
   }
 }
 
+
+/* Correção de quebra e espaçamento em textos longos nos cards */
+.card, .card p, .card li, .clean li, .al {
+  text-align: left;
+  word-break: normal;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.clean li {
+  align-items: flex-start;
+  line-height: 1.45;
+}
+
+.clean li em {
+  display: inline;
+  white-space: normal;
+}
+
+@media(max-width:560px){
+  .card {
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+  ul.clean li {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+}
+
 </style>
 
 <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
@@ -294,7 +324,7 @@ details[open] summary::after{transform:rotate(180deg)}
         <div class="ic-row af"><span class="lbl">Concha</span>Marrom escuro com listras esbranquiçadas</div>
         <div class="ic-row af"><span class="lbl">Borda</span>Fina e afiada</div>
         <div class="ic-row af"><span class="lbl">Tamanho</span>10 a 20 cm — muito maior</div>
-        <div class="ic-row af"><span class="lbl">Risco</span>Hospeda <em>Angiostrongylus</em> — meningite</div>
+        <div class="ic-row af"><span class="lbl">Risco</span>Pode hospedar parasitas relacionados à meningite eosinofílica</div>
       </div>
       <div class="infog-col">
         <span class="ic-badge" style="background:#1a6b1a">Nativo</span>
@@ -329,8 +359,8 @@ details[open] summary::after{transform:rotate(180deg)}
     <ul class="clean">
       <li>Destrói lavouras, hortas e jardins com voracidade</li>
       <li>Compete com moluscos nativos e desequilibra ecossistemas</li>
-      <li>Hospeda <em>Angiostrongylus cantonensis</em> (meningite) e <em>A. costaricensis</em> (enterite)</li>
-      <li>Conchas abandonadas acumulam água e viram criadouros de <em>Aedes aegypti</em></li>
+      <li>Pode hospedar parasitas relacionados à meningite eosinofílica e à enterite abdominal</li>
+      <li>Conchas abandonadas podem acumular água e servir de criadouro para mosquitos</li>
     </ul>
     <div class="al" style="margin-top:10px">A <strong>criação e o consumo</strong> são <strong>proibidos por lei</strong> — Portaria IBAMA nº 93/1998 e Parecer 003/03 IBAMA.</div>
   </div>
