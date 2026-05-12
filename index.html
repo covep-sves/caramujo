@@ -19,17 +19,13 @@ body{font-family:Arial,Helvetica,sans-serif;background:var(--fundo);color:var(--
 .topbar{width:100%;height:14px;background:linear-gradient(to right,#f1c40f 0%,#f1c40f 14%,#a8c934 14%,#a8c934 28%,#27ae60 28%,#27ae60 42%,#17a589 42%,#17a589 57%,#2e86c1 57%,#2e86c1 72%,#00529B 72%,#00529B 100%)}
 .brand{background:#fff;padding:14px 16px 12px;border-bottom:1px solid #eee}
 .brand-inner{max-width:760px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:28px}
-.brand-logo{display:flex;align-items:center;gap:8px}
-.brand-logo .bicon{width:38px;height:38px;border-radius:8px;background:linear-gradient(135deg,#1a5c1a,#27ae60);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
-.brand-logo .btxt strong{display:block;font-size:12px;color:#00529B;line-height:1.1}
-.brand-logo .btxt span{font-size:10px;color:#888}
+.brand-logos-final{justify-content:center;gap:18px}
+.brand-logos-final img{max-height:48px;max-width:44%;object-fit:contain}
 .brand-sep{width:1px;height:36px;background:#ddd}
-.brand-ve{text-align:right}
-.brand-ve strong{display:block;font-size:12px;color:#00529B}
-.brand-ve span{font-size:10px;color:#888}
 .header-blue{background:var(--az);color:#fff;box-shadow:0 3px 12px rgba(0,0,0,.18)}
 .header-inner{max-width:760px;margin:0 auto;padding:11px 14px;display:flex;align-items:center;gap:12px}
-.appicon{width:42px;height:42px;border-radius:9px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.appicon{width:42px;height:42px;border-radius:9px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;overflow:hidden}
+.appicon img{width:100%;height:100%;object-fit:cover}
 .header-blue h1{font-size:15px;line-height:1.18;color:#fff}
 .header-blue p{font-size:11px;opacity:.88}
 .menu-toggle{position:sticky;top:0;z-index:95;width:100%;border:0;background:#fff;border-bottom:1px solid var(--borda);padding:12px 16px;color:var(--az);font-weight:700;text-align:left;font-size:15px;box-shadow:0 2px 8px rgba(0,0,0,.04);cursor:pointer}
@@ -66,6 +62,7 @@ h3{color:var(--az);font-size:17px;margin:4px 0 9px}
 .tile span{font-size:12px;color:#555}
 .tile:hover{transform:translateY(-1px);box-shadow:0 4px 18px rgba(0,0,0,.12)}
 @media(min-width:560px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.brand-logos-final{gap:10px}.brand-logos-final img{max-height:40px;max-width:46%}}
 .infog{background:#fff;border:1px solid var(--borda);border-radius:var(--raio);overflow:hidden;margin-bottom:14px;box-shadow:var(--sombra)}
 .infog-title{background:linear-gradient(90deg,#b01010 50%,#1a6b1a 50%);padding:10px 14px;display:flex;justify-content:space-between}
 .infog-title span{font-size:12px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:.05em}
@@ -79,6 +76,17 @@ h3{color:var(--az);font-size:17px;margin:4px 0 9px}
 .infog-ovos{background:#f7f5ee;border-top:1px solid var(--borda);padding:10px 14px;display:flex;gap:10px;align-items:flex-start}
 .infog-ovos p{font-size:12px;color:#444;line-height:1.5}
 .infog-aviso{background:#FCEBEB;border-top:1px solid #f5b7b1;padding:9px 14px;display:flex;gap:8px;align-items:center;font-size:12px;color:#5E1111;font-weight:600}
+@media(max-width:560px){
+  .infog-title{display:grid;grid-template-columns:1fr;padding:0;gap:0}
+  .infog-title span{display:block;padding:10px 14px;text-align:left!important;line-height:1.25}
+  .infog-title span:first-child{background:#b01010}
+  .infog-title span:last-child{background:#1a6b1a}
+  .infog-body{grid-template-columns:1fr;gap:14px}
+  .infog-col{border-bottom:1px solid var(--borda);padding-bottom:10px}
+  .infog-col:last-child{border-bottom:0;padding-bottom:0}
+  .ic-row{font-size:13px;align-items:flex-start}
+  .ic-row .lbl{min-width:72px;text-align:center}
+}
 .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
 .info-item{background:#fff;border:1px solid var(--borda);border-radius:10px;padding:11px;text-align:center}
 .info-item .em{font-size:22px;margin-bottom:3px}
@@ -87,6 +95,8 @@ h3{color:var(--az);font-size:17px;margin:4px 0 9px}
 ul.clean{list-style:none;display:flex;flex-direction:column;gap:7px}
 ul.clean li{display:flex;gap:8px;font-size:14px;align-items:flex-start}
 ul.clean li::before{content:"›";color:var(--az);font-weight:700;flex-shrink:0}
+.clean li{align-items:flex-start;line-height:1.45}
+.clean li em{display:inline;white-space:normal}
 ol.steps{list-style:none;display:flex;flex-direction:column;gap:10px;counter-reset:sc}
 ol.steps li{display:flex;gap:10px;align-items:flex-start;font-size:14px;counter-increment:sc}
 ol.steps li::before{content:counter(sc);background:var(--az);color:#fff;border-radius:50%;min-width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px}
@@ -103,6 +113,7 @@ summary::-webkit-details-marker{display:none}
 summary::after{content:"▼";font-size:10px;color:#aaa;margin-left:6px;flex-shrink:0;margin-top:4px;transition:transform .2s}
 details[open] summary::after{transform:rotate(180deg)}
 .inside{padding:0 14px 13px;font-size:13px;color:#444;line-height:1.6}
+.inside ul{margin-left:16px;margin-top:6px}
 .contact-card{background:#fff;border:1px solid var(--borda);border-radius:var(--raio);padding:14px;margin-bottom:10px;box-shadow:var(--sombra);display:flex;gap:12px;align-items:flex-start}
 .cc-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
 .cc-blue{background:#E6F4FB}.cc-green{background:#EAF7F2}.cc-amber{background:#FFF3D4}
@@ -155,113 +166,16 @@ details[open] summary::after{transform:rotate(180deg)}
 .contact-strip{background:#E6F4FB;border:1px solid #c0ddf5;border-radius:8px;padding:10px 12px;margin-top:10px;font-size:12px;color:#003060;line-height:1.7}
 .contact-strip a{color:var(--az);font-weight:700}
 .algo-back-btn{display:inline-flex;align-items:center;gap:5px;background:var(--fundo);border:1px solid var(--borda);border-radius:8px;padding:7px 13px;font-size:12px;font-weight:700;color:var(--az);cursor:pointer;margin-top:12px}
-
-.brand-logos-final{justify-content:center;gap:18px}
-.brand-logos-final img{max-height:48px;max-width:44%;object-fit:contain}
-.appicon{overflow:hidden}
-.appicon img{width:100%;height:100%;object-fit:cover}
-@media(max-width:520px){.brand-logos-final{gap:10px}.brand-logos-final img{max-height:40px;max-width:46%}}
-
-
-/* Ajuste responsivo do quadro comparativo africano × nativo */
-@media(max-width:560px){
-  .infog-title{
-    display:grid;
-    grid-template-columns:1fr;
-    padding:0;
-    gap:0;
-  }
-  .infog-title span{
-    display:block;
-    padding:10px 14px;
-    text-align:left!important;
-    line-height:1.25;
-  }
-  .infog-title span:first-child{
-    background:#b01010;
-  }
-  .infog-title span:last-child{
-    background:#1a6b1a;
-  }
-  .infog-body{
-    grid-template-columns:1fr;
-    gap:14px;
-  }
-  .infog-col{
-    border-bottom:1px solid var(--borda);
-    padding-bottom:10px;
-  }
-  .infog-col:last-child{
-    border-bottom:0;
-    padding-bottom:0;
-  }
-  .ic-row{
-    font-size:13px;
-    align-items:flex-start;
-  }
-  .ic-row .lbl{
-    min-width:72px;
-    text-align:center;
-  }
-  .infog-ovos{
-    align-items:flex-start;
-  }
-  .infog-aviso{
-    align-items:flex-start;
-  }
-}
-
-
-/* Correção de quebra e espaçamento em textos longos nos cards */
-.card, .card p, .card li, .clean li, .al {
-  text-align: left;
-  word-break: normal;
-  overflow-wrap: break-word;
-  white-space: normal;
-}
-
-.clean li {
-  align-items: flex-start;
-  line-height: 1.45;
-}
-
-.clean li em {
-  display: inline;
-  white-space: normal;
-}
-
-@media(max-width:560px){
-  .card {
-    overflow-wrap: break-word;
-    word-break: normal;
-  }
-  ul.clean li {
-    font-size: 14px;
-    line-height: 1.45;
-  }
-}
-
 </style>
-
 <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-
 <meta property="og:title" content="Caramujo Africano — São Luís">
 <meta property="og:description" content="Orientações para a população de São Luís/MA">
 <meta property="og:image" content="https://covep-sves.github.io/caramujo/preview.png">
-<meta property="og:image:secure_url" content="https://covep-sves.github.io/caramujo/preview.png">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta property="og:url" content="https://covep-sves.github.io/caramujo/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Caramujo Africano — São Luís">
-
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Caramujo Africano — São Luís">
-<meta name="twitter:description" content="Orientações para a população de São Luís/MA">
 <meta name="twitter:image" content="https://covep-sves.github.io/caramujo/preview.png">
-
 </head>
 <body>
 <div class="topbar"></div>
@@ -338,14 +252,12 @@ details[open] summary::after{transform:rotate(180deg)}
     <div class="infog-ovos"><span style="font-size:22px;flex-shrink:0">🥚</span><p><strong>Ovos:</strong> pequenos, esféricos e esbranquiçados, semienterrados no solo úmido ou sob matéria orgânica, em grupos de até 400.</p></div>
     <div class="infog-aviso"><span>⚠️</span><span>Não toque no caramujo ou nos ovos com as mãos desprotegidas. Use luvas e sacos plásticos.</span></div>
   </div>
-
   <div class="card az">
     <h3>Comparativo visual: caramujo africano × caramujo nativo</h3>
     <p>O quadro acima traz as principais diferenças. A imagem abaixo complementa a identificação visual para ajudar a população a não confundir espécies nativas com o caramujo africano.</p>
     <img src="caramujo_comparativo.png" alt="Comparativo entre caramujo africano e caramujo nativo" style="width:100%;border-radius:16px;margin-top:12px;border:1px solid var(--borda)">
     <p class="small" style="margin-top:8px"><strong>Material educativo elaborado pela Vigilância Epidemiológica/SVES/SEMUS São Luís.</strong></p>
   </div>
-
   <div class="card">
     <h3>Características gerais</h3>
     <div class="info-grid">
@@ -364,7 +276,6 @@ details[open] summary::after{transform:rotate(180deg)}
     </ul>
     <div class="al" style="margin-top:10px">A <strong>criação e o consumo</strong> são <strong>proibidos por lei</strong> — Portaria IBAMA nº 93/1998 e Parecer 003/03 IBAMA.</div>
   </div>
-
   <div class="card verde"><h3>Por que aumentam no período chuvoso?</h3>
     <p>O caramujo africano se adapta melhor a ambientes úmidos. No período chuvoso, há mais umidade, abrigo e matéria orgânica disponível, o que favorece a circulação, a alimentação e a reprodução.</p>
     <ul class="clean" style="margin-top:8px">
@@ -373,20 +284,17 @@ details[open] summary::after{transform:rotate(180deg)}
       <li>Por isso, a limpeza ambiental antes e durante o período chuvoso reduz a proliferação.</li>
     </ul>
   </div>
-
 </section>
 
 <!-- CICLO -->
 <section id="ciclo">
   <div class="card verde hero"><div class="tag">Transmissão</div><h2>Ciclo de transmissão</h2><p>Entenda como o parasita <em>Angiostrongylus cantonensis</em> chega ao ser humano.</p></div>
-
   <div class="card verde">
     <h3>Imagem do ciclo de transmissão</h3>
     <p>O ciclo mostra como o parasita pode circular entre ratos, caramujos e humanos.</p>
     <img src="ciclo_angiostrongylus.png" alt="Ciclo de transmissão do Angiostrongylus cantonensis" style="width:100%;border-radius:16px;margin-top:12px;border:1px solid var(--borda)">
-    <p class="small" style="margin-top:8px"><strong>Fonte da imagem:</strong> Informe técnico para controle do caracol ou “caramujo africano” — Governo da Bahia.</p>
+    <p class="small" style="margin-top:8px"><strong>Fonte da imagem:</strong> Informe técnico para controle do caracol ou "caramujo africano" — Governo da Bahia.</p>
   </div>
-
   <div class="card"><h3>As 6 etapas do ciclo</h3>
     <ol class="steps">
       <li><strong>Ratos infectados</strong> — vermes adultos vivem nos pulmões dos ratos; larvas L1 são excretadas pelas fezes.</li>
@@ -411,23 +319,19 @@ details[open] summary::after{transform:rotate(180deg)}
 <!-- RISCOS -->
 <section id="riscos">
   <div class="card verm hero"><div class="tag">Saúde</div><h2>Riscos à saúde</h2><p>A principal doença é a <strong>meningite eosinofílica</strong>, causada por <em>Angiostrongylus cantonensis</em>.</p></div>
-
-  <div class="card azul">
+  <div class="card az">
     <h3>O caramujo sempre transmite meningite?</h3>
-    <p>Não. O caramujo africano não “produz” meningite sozinho. Para representar risco de transmissão, ele precisa estar contaminado por um verme específico, chamado <strong><em>Angiostrongylus</em></strong>.</p>
+    <p>Não. O caramujo africano não "produz" meningite sozinho. Para representar risco de transmissão, ele precisa estar contaminado por um verme específico, chamado <strong><em>Angiostrongylus</em></strong>.</p>
     <p>Em 2025, São Luís participou de uma ação de monitoramento realizada pela <strong>Fiocruz</strong> em parceria com o <strong>LACEN-MA</strong> e a <strong>SEMUS</strong>, com coleta e análise de caramujos em diferentes pontos da cidade.</p>
     <div class="al ok"><strong>Resultado importante:</strong> nas amostras analisadas naquele período, <strong>100% dos caramujos coletados não apresentaram o verme causador da meningite eosinofílica</strong>.</div>
     <p>Isso ajuda a tranquilizar a população, mas não significa que os cuidados possam ser abandonados. O caramujo continua sendo uma espécie invasora e pode se contaminar posteriormente no ambiente. Por isso, o manejo correto, a limpeza dos quintais e a higienização dos alimentos continuam sendo fundamentais.</p>
   </div>
-
-
   <div class="card verde">
     <h3>Como ocorre a transmissão?</h3>
     <p>O caramujo africano pode atuar como hospedeiro intermediário de parasitas do gênero <strong>Angiostrongylus</strong>. A infecção humana ocorre principalmente pela ingestão acidental de muco contaminado em alimentos mal higienizados ou pelo consumo de moluscos crus ou malcozidos.</p>
     <img src="ciclo_angiostrongylus.png" alt="Ciclo do Angiostrongylus cantonensis" style="width:100%;border-radius:16px;margin-top:12px;border:1px solid var(--borda)">
-    <p class="small" style="margin-top:8px"><strong>Fonte da imagem:</strong> Informe técnico para controle do caracol ou “caramujo africano” — Governo da Bahia.</p>
+    <p class="small" style="margin-top:8px"><strong>Fonte da imagem:</strong> Informe técnico para controle do caracol ou "caramujo africano" — Governo da Bahia.</p>
   </div>
-
   <div class="card verm"><h3>Sintomas da meningite eosinofílica</h3>
     <p>Aparecem de <strong>1 a 3 semanas</strong> após a exposição:</p>
     <ul class="clean" style="margin-top:8px">
@@ -489,15 +393,25 @@ details[open] summary::after{transform:rotate(180deg)}
     </ul>
   </div>
 
-  <div class="card laranja"><h3>Sal, água sanitária e cal: quando usar e quais cuidados?</h3>
+  <div class="card laranja">
+    <h3>Sal, água sanitária e cal: quando usar e quais cuidados?</h3>
     <div class="al danger"><strong>Não jogue sal, cal ou água sanitária diretamente no solo, jardins, canteiros ou áreas verdes.</strong> Isso pode prejudicar plantas, contaminar o ambiente ou causar acidentes.</div>
-    <ul class="clean">
-      <li><strong>Sal grosso ou sal de cozinha:</strong> pode ser usado em pequena quantidade <strong>dentro do saco plástico fechado</strong>, nunca espalhado no terreno. O uso no solo causa salinização.</li>
-      <li><strong>Água sanitária/cloro:</strong> pode ser usada como medida complementar <strong>dentro do saco</strong>. Não misture com outros produtos químicos. Mantenha longe de crianças e animais.</li>
-      <li><strong>Cal virgem:</strong> aparece em orientações técnicas, mas exige cuidado no manuseio, pois pode irritar pele, olhos e vias respiratórias. Se usada pela população, deve ser apenas dentro do saco ou conforme orientação técnica, nunca espalhada no ambiente.</li>
-      <li><strong>Mais importante:</strong> a retirada mecânica dos caramujos e ovos, o acondicionamento em saco resistente, a quebra das conchas e o descarte correto são as etapas essenciais.</li>
+    <ul class="clean" style="margin-top:10px">
+      <li>
+        <div><strong>Sal grosso ou sal de cozinha:</strong> pode ser usado em pequena quantidade <strong>dentro do saco plástico fechado</strong>, nunca espalhado no terreno. O uso no solo causa salinização, dificulta a absorção de água pelas plantas e pode contribuir para erosão do solo.</div>
+      </li>
+      <li>
+        <div><strong>Água sanitária/cloro:</strong> pode ser usada como medida complementar <strong>dentro do saco fechado</strong>. <strong>Não misture com outros produtos químicos e nem dilua.</strong> Mantenha longe de crianças e animais.</div>
+      </li>
+      <li>
+        <div><strong>Cal virgem:</strong> aparece em orientações técnicas, mas exige cuidado no manuseio, pois pode irritar pele, olhos e vias respiratórias. Se usada pela população, deve ser usada conforme orientação técnica do produto e apenas dentro do saco fechado — nunca espalhada no ambiente. A cal virgem em contato com o solo pode alterar o pH, prejudicar plantas sensíveis e, em solos permeáveis, contaminar o lençol freático.</div>
+      </li>
+      <li>
+        <div><strong>Mais importante:</strong> a retirada mecânica dos caramujos e ovos, o acondicionamento em saco resistente, a quebra das conchas e o descarte correto são as etapas essenciais — os produtos acima são complementares, não substitutos.</div>
+      </li>
     </ul>
   </div>
+
   <div class="card az"><h3>Que luva e que saco usar?</h3>
     <ul class="clean">
       <li><strong>Luva:</strong> prefira luva grossa de limpeza ou luva de borracha. Na falta dela, use saco plástico duplo como barreira, sem contato direto com a pele.</li>
@@ -514,7 +428,6 @@ details[open] summary::after{transform:rotate(180deg)}
       <li>Depois, descarte o saco bem fechado no lixo comum.</li>
     </ul>
   </div>
-
   <div class="card laranja"><h3>Cuidados com animais domésticos</h3>
     <ul class="clean">
       <li>Evite que cães e gatos ingiram o caramujo ou sua baba</li>
@@ -538,13 +451,21 @@ details[open] summary::after{transform:rotate(180deg)}
 <!-- FAQ -->
 <section id="faq">
   <div class="card az hero"><div class="tag">Dúvidas</div><h2>Perguntas frequentes</h2><p>Toque em uma pergunta para ver a resposta.</p></div>
+
   <details><summary>Posso usar sal grosso para matar o caramujo?</summary><div class="inside">Sim. Coloque o caramujo em saco plástico fechado, despeje sal grosso e aguarde 15 minutos. <strong>Nunca salgar direto no solo</strong> — causa salinização e prejudica plantas.</div></details>
+
   <details><summary>Meu filho tocou no caramujo — o que fazer?</summary><div class="inside">Lave imediatamente as mãos com água e sabão por 20 segundos. O contato sem ingestão dificilmente causa infecção. Observe nos próximos dias: febre, dor de cabeça intensa ou rigidez no pescoço → vá ao médico e informe o contato.</div></details>
+
   <details><summary>Encontrei muitos caramujos no quintal — o que faço?</summary><div class="inside">Entre em contato com a DCV: (98) 99220-6557. Enquanto aguarda, remova entulho, folhas e materiais acumulados. A equipe técnica usa moluscicidas registrados e seguros.</div></details>
+
   <details><summary>Animais domésticos correm risco?</summary><div class="inside">Sim. Cães e gatos que ingerirem o caramujo ou sua baba também podem se infectar. Sintomas neurológicos (tremores, perda de equilíbrio) após ingestão → veterinário imediatamente.</div></details>
+
   <details><summary>A baba do caramujo no quintal é perigosa?</summary><div class="inside">O risco pelo contato com rastro de baba no solo é baixo. Lave bem os alimentos cultivados nesse solo, não ande descalço em áreas infestadas e lave as mãos após trabalhar no jardim.</div></details>
-  <details><summary>O que fazer com as conchas depois de matar o caramujo?</summary><div class="inside">As conchas devem ser <strong>quebradas</strong> usando com luvas e calçado fechado antes do descarte — conchas inteiras acumulam água e viram criadouros de <em>Aedes aegypti</em>. Descarte no lixo em saco fechado.</div></details>
+
+  <details><summary>O que fazer com as conchas depois de matar o caramujo?</summary><div class="inside">As conchas devem ser <strong>quebradas com material resistente</strong> antes do descarte — conchas inteiras acumulam água e viram criadouros de <em>Aedes aegypti</em>. Descarte no lixo em saco fechado.</div></details>
+
   <details><summary>Como diferenciar o caramujo africano do nativo?</summary><div class="inside">O africano tem 10–20 cm, concha escura, traseira pontuda e borda fina. O nativo é menor, mais claro, traseira arredondada e borda espessa. Em dúvida, não toque e entre em contato com a Vigilância.</div></details>
+
   <details><summary>Posso usar raticidas ou formicidas para controle?</summary><div class="inside">Não. São tóxicos para crianças e animais, contaminam solo e água. Para pequenas quantidades use sal grosso; em infestações maiores acione a DCV.</div></details>
 
   <details><summary>Meu filho entrou em contato com caramujo. Precisa tomar vacina contra meningite?</summary><div class="inside">Não há indicação automática de vacina contra meningite por simples contato com caramujo africano. A preocupação relacionada ao caramujo envolve parasitas do gênero <em>Angiostrongylus</em>, e não as meningites bacterianas prevenidas por vacina. Lave bem as mãos e objetos com água e sabão. Se houver sintomas como dor de cabeça intensa, febre, vômitos ou rigidez no pescoço, procure a unidade de saúde mais próxima.</div></details>
@@ -560,6 +481,7 @@ details[open] summary::after{transform:rotate(180deg)}
   <details><summary>Por que os caramujos aumentam no período chuvoso?</summary><div class="inside">O caramujo africano se favorece de ambientes úmidos. No período chuvoso há mais umidade, abrigo e matéria orgânica disponível, favorecendo alimentação, reprodução e sobrevivência dos ovos.</div></details>
 
   <details><summary>A prefeitura tem equipe técnica para esse tipo de vetor?</summary><div class="inside">Sim. A DCV — Divisão de Controle Vetorial possui equipe técnica de malacologia, que atua com orientação técnica, avaliação de infestação, identificação de moluscos, ações educativas, monitoramento e apoio em situações de relevância sanitária.</div></details>
+
 </section>
 
 <!-- SOBRE -->
@@ -572,7 +494,7 @@ details[open] summary::after{transform:rotate(180deg)}
       <div class="pwa-tile"><div class="em">📶</div><strong>Funciona offline</strong><span>Após o primeiro acesso, funciona sem internet</span></div>
       <div class="pwa-tile"><div class="em">🆓</div><strong>Gratuito</strong><span>Sem cadastro, senha ou download de loja</span></div>
     </div>
-    <div class="al ok" style="margin-top:12px"><strong>Como instalar:</strong><br><strong>Android (Chrome):</strong> menu ⋮ → “Instalar app” ou “Adicionar à tela inicial”.<br><strong>iPhone/iPad (Safari):</strong> compartilhar ⬆ → “Adicionar à Tela de Início”.</div>
+    <div class="al ok" style="margin-top:12px"><strong>Como instalar:</strong><br><strong>Android (Chrome):</strong> menu ⋮ → "Instalar app" ou "Adicionar à tela inicial".<br><strong>iPhone/iPad (Safari):</strong> compartilhar ⬆ → "Adicionar à Tela de Início".</div>
     <span class="ver-badge">Versão 1.0 · Maio 2026</span>
   </div>
   <div class="about-card"><div class="tag">Elaboração técnica</div>
@@ -584,8 +506,8 @@ details[open] summary::after{transform:rotate(180deg)}
     <ul>
       <li>Marcos Vinícius Serrão Viana — Divisão de Controle Vetorial – DCV/COVEP/SVES</li>
       <li>Pollyanna da Fonseca Silva Matsuoka — Divisão de Controle Vetorial – DCV/COVEP/SVES</li>
-      <li>Julio Cézar Maia Ferreira — Divisão de Controle Vetorial – DCV/COVEP/SVES</li>
-      <li>José de Ribamar Nunes Pereira — Divisão de Controle Vetorial – DCV/COVEP/SVES</li>
+      <li>Julio Cézar Maia Pereira — Divisão de Controle Vetorial – DCV/COVEP/SVES</li>
+      <li>José de Ribamar Nunes Ferreira — Divisão de Controle Vetorial – DCV/COVEP/SVES</li>
       <li>Tercilândia de Cássia Rodrigues — Divisão de Controle Vetorial – DCV/COVEP/SVES</li>
     </ul>
   </div>
@@ -638,11 +560,10 @@ details[open] summary::after{transform:rotate(180deg)}
       {n:3,c:'',t:'Informe os dados do local',d:'Endereço completo, ponto de referência, quantidade aproximada, presença de ovos e fotos, se possível.'},
       {n:4,c:'green',t:'Aguarde orientação ou avaliação técnica',d:'A equipe poderá orientar, programar avaliação ou encaminhar a demanda conforme o território.'},
     ],warn:'Área pública inclui praça, calçada, escola, parque, canteiro, via pública ou equipamento público.',danger:'Não use sal, veneno, raticida, formicida ou produtos químicos em área pública.'},
-
     priv_result:{id:'priv_result',type:'result',color:'rh-green',icon:'✅',title:'Área privada — passo a passo para eliminar com segurança',p:100,steps:[
       {n:1,c:'green',t:'Separe os materiais',d:'Luva grossa de limpeza ou luva de borracha, calçado fechado, pá pequena, pinça, pegador ou espátula, saco plástico resistente, e material para fechamento do saco.'},
       {n:2,c:'',t:'Proteja-se antes de tocar no local',d:'Nunca manipule caramujos ou ovos com as mãos nuas. Na falta de luva, use saco plástico duplo como barreira.'},
-      {n:3,c:'',t:'Recolha caramujos e ovos',d:'Use pá pequena, pinça, pegador ou espátula ou saco plástico. Procure ovos pequenos, esbranquiçados, em solo úmido, folhas, entulho e matéria orgânica.'},
+      {n:3,c:'',t:'Recolha caramujos e ovos',d:'Use pá pequena, pinça, pegador ou espátula. Procure ovos pequenos, esbranquiçados, em solo úmido, folhas, entulho e matéria orgânica.'},
       {n:4,c:'amber',t:'Coloque em saco plástico resistente',d:'Acondicione caramujos e ovos em saco grosso e bem fechado para evitar contato direto.'},
       {n:5,c:'amber',t:'Produto complementar apenas dentro do saco',d:'Sal, cal ou água sanitária/cloro, se usados, devem ser colocados dentro do saco fechado. Nunca espalhe no solo, jardim ou área verde.'},
       {n:6,c:'amber',t:'Aguarde o produto agir',d:'Deixe o saco fechado por algum tempo, mantendo longe de crianças e animais.'},
@@ -651,7 +572,6 @@ details[open] summary::after{transform:rotate(180deg)}
       {n:9,c:'green',t:'Limpe o ambiente',d:'Remova entulho, folhas acumuladas, madeira, restos de alimento e locais úmidos que sirvam de abrigo.'},
       {n:10,c:'green',t:'Higienize mãos e ferramentas',d:'Lave tudo com água e sabão. Mesmo usando luvas, lave bem as mãos ao final.'},
     ],warn:'Em condomínios, áreas comuns são responsabilidade do condomínio/moradores. A DCV pode orientar tecnicamente e avaliar infestação importante ou recorrente.',danger:'Não jogue sal, cal ou água sanitária diretamente no terreno.'},
-
     ovos_result:{id:'ovos_result',type:'result',color:'rh-amber',icon:'🥚',title:'Ovos encontrados — como proceder',p:100,steps:[
       {n:1,c:'green',t:'Use proteção',d:'Use luvas e uma pá pequena, espátula ou ferramenta exclusiva para esse fim. Não toque diretamente nos ovos.'},
       {n:2,c:'',t:'Retire os ovos com o solo ao redor',d:'Os ovos podem ficar semienterrados. Retire também pequena porção do solo, folhas ou matéria orgânica ao redor.'},
@@ -660,23 +580,20 @@ details[open] summary::after{transform:rotate(180deg)}
       {n:5,c:'',t:'Descarte corretamente',d:'Feche bem o saco e descarte no lixo comum.'},
       {n:6,c:'green',t:'Procure caramujos adultos por perto',d:'A presença de ovos indica foco ativo. Reforce a limpeza do quintal ou área comum.'},
     ],warn:'Não basta jogar produto por cima: a retirada mecânica dos ovos é a etapa mais importante.',danger:null},
-
     contato_result:{id:'contato_result',type:'result',color:'rh-blue',icon:'🙌',title:'Contato sem sintomas — o que fazer',p:100,steps:[
       {n:1,c:'green',t:'Lave imediatamente',d:'Lave mãos, pele, objetos ou calçados com água e sabão.'},
       {n:2,c:'',t:'Não há indicação de vacina por simples contato',d:'A vacina contra meningite não é indicada por contato com caramujo. A preocupação envolve parasitas, não meningites bacterianas prevenidas por vacina.'},
       {n:3,c:'amber',t:'Se houve contato com boca ou alimento',d:'Redobre a observação e procure unidade de saúde se surgirem sintomas.'},
       {n:4,c:'green',t:'Observe sinais nos próximos dias',d:'Dor de cabeça forte, febre, rigidez no pescoço, vômitos, formigamento ou sonolência incomum exigem atendimento.'},
     ],warn:'Não medique por conta própria. Em crianças, se houve mão na boca após contato, procure unidade de saúde se houver qualquer sintoma.',danger:null},
-
     animal:{id:'animal',type:'result',color:'rh-red',icon:'🐾',title:'Animal doméstico exposto',p:100,steps:[
       {n:1,c:'red',t:'Procure orientação veterinária ou a UVZ',d:'Se o animal ingeriu caramujo, ovos ou teve contato intenso com muco, procure atendimento veterinário ou orientação da UVZ.'},
       {n:2,c:'green',t:'DCV — Divisão de Controle Vetorial',d:'DCV/COVEP/SVES | Av. dos Franceses, s/nº — Alemanha, São Luís/MA | 2º piso — Sala 7 | (98) 99220-6557.'},
-      {n:3,c:'green',t:'UVZ — Unidade de Vigilância em Zoonoses São Luís',d:'Estrada de Ribamar, nº 5 — Forquilha (antes do Eletro Mateus) | (98) 99164-9301 | uvz.sves@semus.saoluis.ma.gov.br | Instagram: @uvzsaoluis.'},
+      {n:3,c:'green',t:'UVZ — Unidade de Vigilância em Zoonoses São Luís',d:'Estrada de Ribamar, nº 5 — Forquilha | (98) 99164-9301 | uvz.sves@semus.saoluis.ma.gov.br | @uvzsaoluis.'},
       {n:4,c:'',t:'Informe o histórico',d:'Relate que houve contato com caramujo africano e diga quando ocorreu.'},
       {n:5,c:'amber',t:'Observe sinais de alerta',d:'Tremores, vômitos, perda de equilíbrio, fraqueza ou alteração neurológica exigem urgência.'},
       {n:6,c:'green',t:'Lave patas e focinho',d:'Use água e sabão, evitando que o animal lamba resíduos.'},
     ],warn:null,danger:'Mantenha ração e água protegidas, especialmente à noite, para não atrair caramujos.'},
-
     sintomas:{id:'sintomas',type:'result',color:'rh-red',icon:'🏥',title:'Sintomas após contato ou possível ingestão',p:100,steps:[
       {n:1,c:'red',t:'Procure a unidade de saúde mais próxima',d:'Não aguarde piorar se houver dor de cabeça intensa, febre, rigidez no pescoço, vômitos, formigamento ou sonolência incomum.'},
       {n:2,c:'red',t:'Informe o histórico ao profissional',d:'Diga quando ocorreu, se houve contato com boca, ingestão de alimento possivelmente contaminado ou manipulação sem luvas.'},
@@ -708,11 +625,16 @@ details[open] summary::after{transform:rotate(180deg)}
       if(node.danger)ex+=`<div class="danger-box">🚨 ${node.danger}</div>`;
       out.innerHTML=`<div class="result-head ${node.color}"><span class="ri">${node.icon}</span><h3>${node.title}</h3></div><div class="result-body">${sh}${ex}<div class="contact-strip">📞 DCV — Divisão de Controle Vetorial: <a href="tel:+5598992206557">(98) 99220-6557</a></div><button class="algo-back-btn" onclick="algoInit()">↩ Recomeçar</button></div>`;
     } else {
-      window.currentAlgoNode=node; const oh=node.opts.map((o,i)=>`<button class="algo-opt" onclick="algoChooseIndex(${i})"><span class="arr">›</span>${o.lbl}</button>`).join('');
+      window.currentAlgoNode=node;
+      const oh=node.opts.map((o,i)=>`<button class="algo-opt" onclick="algoChooseIndex(${i})"><span class="arr">›</span>${o.lbl}</button>`).join('');
       out.innerHTML=`<div class="algo-eyebrow">${node.eye||''}</div><div class="algo-q">${node.q}</div><div class="algo-opts">${oh}</div>${stack.length?'<button class="algo-back-btn" onclick="algoBack()">← Voltar</button>':''}`;
     }
   }
-  window.algoChooseIndex=function(i){const opt=(window.currentAlgoNode&&window.currentAlgoNode.opts)?window.currentAlgoNode.opts[i]:null;if(!opt)return;stack.push(opt.lbl);const node=opt.next==='root'?TREE:NOS[opt.next];if(node)renderNode(node);};
+  window.algoChooseIndex=function(i){
+    const opt=(window.currentAlgoNode&&window.currentAlgoNode.opts)?window.currentAlgoNode.opts[i]:null;
+    if(!opt)return;stack.push(opt.lbl);
+    const node=opt.next==='root'?TREE:NOS[opt.next];if(node)renderNode(node);
+  };
   window.algoBack=function(){
     stack.pop();
     if(stack.length===0){renderNode(TREE);}
