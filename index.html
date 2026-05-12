@@ -97,9 +97,11 @@ ul.clean li{display:flex;gap:8px;font-size:14px;align-items:flex-start}
 ul.clean li::before{content:"›";color:var(--az);font-weight:700;flex-shrink:0}
 .clean li{align-items:flex-start;line-height:1.45}
 .clean li em{display:inline;white-space:normal}
-ol.steps{list-style:none;display:flex;flex-direction:column;gap:10px;counter-reset:sc}
-ol.steps li{display:flex;gap:10px;align-items:flex-start;font-size:14px;counter-increment:sc}
-ol.steps li::before{content:counter(sc);background:var(--az);color:#fff;border-radius:50%;min-width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px}
+ol.steps{list-style:none;display:flex;flex-direction:column;gap:12px;counter-reset:sc}
+ol.steps li{display:flex;gap:10px;align-items:flex-start;font-size:14px;counter-increment:sc;line-height:1.55}
+ol.steps li::before{content:counter(sc);background:var(--az);color:#fff;border-radius:50%;min-width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:2px}
+ol.steps li > span{display:inline}
+ol.steps li strong{font-weight:700;color:var(--texto)}
 .ref{font-size:13px;color:#444;margin-bottom:9px;line-height:1.65}
 .mito-item{background:#fff;border:1px solid var(--borda);border-radius:var(--raio);overflow:hidden;margin-bottom:10px;box-shadow:var(--sombra)}
 .myth-row{background:#FCEBEB;padding:10px 13px;border-left:5px solid var(--verm)}
@@ -297,12 +299,12 @@ details[open] summary::after{transform:rotate(180deg)}
   </div>
   <div class="card"><h3>As 6 etapas do ciclo</h3>
     <ol class="steps">
-      <li><strong>Ratos infectados</strong>—vermes adultos vivem nos pulmões dos ratos; larvas L1 são excretadas pelas fezes.</li>
-      <li><strong>O caramujo se infecta</strong> — larvas L1 infectam o <em>Achatina fulica</em> e se desenvolvem em larvas L3 infectantes.</li>
-      <li><strong>Hospedeiro intermediário</strong> — larvas L3 ficam no tecido e na baba do caramujo.</li>
-      <li><strong>Ratos ingerem o molusco</strong> — fechando o ciclo no hospedeiro definitivo.</li>
-      <li><strong>Humanos se infectam acidentalmente</strong> — ao consumir alimentos contaminados pela baba sem higienização adequada.</li>
-      <li><strong>No ser humano</strong> — larvas migram ao sistema nervoso central, causando meningite eosinofílica. Não atingem a fase adulta.</li>
+      <li><span><strong>Ratos infectados</strong> — vermes adultos vivem nos pulmões dos ratos; larvas L1 são excretadas pelas fezes.</span></li>
+      <li><span><strong>O caramujo se infecta</strong> — larvas L1 infectam o <em>Achatina fulica</em> e se desenvolvem em larvas L3 infectantes.</span></li>
+      <li><span><strong>Hospedeiro intermediário</strong> — larvas L3 ficam no tecido e na baba do caramujo.</span></li>
+      <li><span><strong>Ratos ingerem o molusco</strong> — fechando o ciclo no hospedeiro definitivo.</span></li>
+      <li><span><strong>Humanos se infectam acidentalmente</strong> — ao consumir alimentos contaminados pela baba sem higienização adequada.</span></li>
+      <li><span><strong>No ser humano</strong> — larvas migram ao sistema nervoso central, causando meningite eosinofílica. Não atingem a fase adulta.</span></li>
     </ol>
     <div class="al danger" style="margin-top:12px">A transmissão ocorre pela <strong>ingestão</strong> de alimentos contaminados pela baba — não pelo simples toque na pele íntegra.</div>
   </div>
